@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Georgia, 'Times New Roman', serif;
   background-color: #f8f5f0;
@@ -12,5 +16,9 @@ body {
 }
 
 #root {
+  min-height: 100vh;
+}
+
+section {
   min-height: 100vh;
 }

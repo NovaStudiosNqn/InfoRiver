@@ -10,11 +10,11 @@ export default function Navbar() {
                 <span className="navbar-subtitle">Diario del hincha millonario</span>
             </div>
             <nav className="navbar-links">
-                <a href="#" className="active">Portada</a>
-                <a href="#">Noticias</a>
-                <a href="#">Partidos</a>
-                <a href="#">Plantel</a>
-                <a href="#">Historia</a>
+                <a href="#portada" className="active">Portada</a>
+                <a href="#noticias">Noticias</a>
+                <a href="#partidos">Partidos</a>
+                <a href="#plantel">Plantel</a>
+                <a href="#historia">Historia</a>
             </nav>
         </header>
     )

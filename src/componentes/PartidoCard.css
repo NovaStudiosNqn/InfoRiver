@@ -1,0 +1,80 @@
+.partido-card {
+  background: #fff;
+  border: 1px solid #e5e0d8;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.7rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.gano-river {
+  border: 2px solid #15ff00;
+}
+
+.empato-river {
+  border: 2px solid #e0a100;
+}
+
+.perdio-river {
+  border: 2px solid #d00027;
+}
+
+
+.partido-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.partido-card .torneo {
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 65%;
+}
+
+.estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: #eee;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.estado svg {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+
+.estado.en_vivo { background: #d00027; color: #fff; animation: pulse 1.5s infinite; }
+.estado.finalizado { background: #1a1a1a; color: #fff; }
+
+@keyframes pulse {
+  50% { opacity: 0.6; }
+}
+
+.marcador {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.vs {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.partido-card footer {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #666;
+}

@@ -1,0 +1,33 @@
+.partidos {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.partidos h3 {
+  margin: 1.2rem 0 0.6rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #444;
+}
+
+.destacados, .listas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 700px) {
+  .destacados, .listas { grid-template-columns: 1fr; }
+}
+
+.en-vivo-box {
+  background: #fff5f5;
+  border: 1px dashed #d00027;
+  border-radius: 12px;
+  padding: 0.5rem 1rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.error { color: #d00027; }

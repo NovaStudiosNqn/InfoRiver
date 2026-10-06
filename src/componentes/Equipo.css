@@ -1,0 +1,11 @@
+.equipo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.equipo:last-child { justify-content: flex-end; }
+
+.equipo img { width: 36px; height: 36px; object-fit: contain; }
+.equipo strong { font-size: 1.4rem; margin-left: 0.3rem; }
