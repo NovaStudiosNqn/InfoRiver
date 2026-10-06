@@ -1,60 +1,62 @@
 .navbar {
-	background-color: #E2211C;
-	width: 100%;
-	color: #fff;
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	padding: 8px 20px;
+  position: fixed;
+  background-color: #e2211c;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 20px;
+  z-index: 91218;
 }
 
 .navbar-logo {
-	height: 52px;
-	width: 52px;
-	border-radius: 50%;
-	background: #fff;
-	object-fit: cover;
-	flex-shrink: 0;
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  background: #fff;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .navbar-brand {
-	display: flex;
-	flex-direction: column;
-	line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
 }
 
 .navbar-title {
-	font-size: 28px;
-	font-weight: 900;
-	letter-spacing: 0.5px;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
 }
 
 .navbar-subtitle {
-	font-family: system-ui, Arial, sans-serif;
-	font-size: 12px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	opacity: 0.9;
-	white-space: nowrap;
+  font-family: system-ui, Arial, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.9;
+  white-space: nowrap;
 }
 
 .navbar-links {
-	display: flex;
-	gap: 4px;
-	margin-left: auto;
-	font-family: system-ui, Arial, sans-serif;
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+  font-family: system-ui, Arial, sans-serif;
 }
 
 .navbar-links a {
-	color: #fff;
-	text-decoration: none;
-	font-size: 14px;
-	font-weight: 600;
-	padding: 6px 12px;
-	border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
 }
 
 .navbar-links a:hover,
 .navbar-links a.active {
-	background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.25);
 }

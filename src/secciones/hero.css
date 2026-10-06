@@ -1,0 +1,49 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bandaroja {
+  position: relative;
+  width: 130%;
+  margin-top: 75vh;
+  flex-shrink: 0;
+  height: clamp(120px, 18vw, 200px);
+  transform: rotate(-16deg);
+  background: red;
+  border-top: 2px solid rgba(0, 0, 0, 0.22);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.22);
+  box-shadow:
+    0 10px 30px rgba(227, 6, 19, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  will-change: transform, opacity, filter;
+}
+
+.bandaroja-brillo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 35%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  filter: blur(1px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+@media (max-width: 640px) {
+  .bandaroja {
+    width: 150%;
+    height: clamp(90px, 26vw, 130px);
+    transform: rotate(-18deg);
+  }
+}

@@ -12,7 +12,7 @@ export function IconEsLocal({ esLocal }) {
   );
 }
 
-export default function PartidoCard({ partido, destacado = false }) {
+export default function PartidoCard({ partido }) {
   const textoEstado =
     partido.estado === "en_vivo"
       ? `EN VIVO ${partido.minuto ?? ""}`
@@ -29,14 +29,12 @@ export default function PartidoCard({ partido, destacado = false }) {
           : "perdio-river";
 
   return (
-    <article
-      className={`partido-card ${partido.estado} ${destacado ? "destacado" : ""} ${resultadoClass}`}
-    >
+    <article className={`partido-card ${partido.estado} ${resultadoClass}`}>
       <header>
         <span className="torneo">{etiquetaTorneo(partido)}</span>
         <span className={`estado ${partido.estado}`}>
           <IconEsLocal esLocal={partido.esLocalRiver} />
-          <span>{textoEstado}</span>
+          <span>{textoEstado === "FT" ? "Finalizado" : textoEstado}</span>
         </span>
       </header>
 
