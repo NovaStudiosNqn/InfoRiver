@@ -31,17 +31,6 @@
   margin-bottom: 0.6rem;
 }
 
-.hero-title {
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
-  line-height: 1.1;
-}
-
-.hero-subtitle {
-  margin-top: 0.3rem;
-  color: #555;
-  font-size: 1rem;
-}
-
 .hero-grid {
   display: grid;
   grid-template-columns: 1.45fr 1fr;

@@ -1,7 +1,7 @@
 # Todo
 
 - [ ] Optimizar imágenes
-- [ ] Sección Hero
+- [x] Sección Hero
 - [ ] Sección Noticias
 - [ ] Sección Plantel
 - [ ] Sección Redes / Contacto

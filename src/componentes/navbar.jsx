@@ -1,7 +1,15 @@
 import "./navbar.css";
 import logo from "../static/inforiver.png";
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
+
+const LINKS = [
+  { id: "portada", label: "Portada" },
+  { id: "noticias", label: "Noticias" },
+  { id: "partidos", label: "Partidos" },
+  { id: "plantel", label: "Plantel" },
+  { id: "contacto", label: "Contacto" },
+];
 
 export default function Navbar() {
   const [activeLink, setActiveLink] = useState("portada");
@@ -10,7 +18,7 @@ export default function Navbar() {
       gsap.fromTo(
         ".navbar",
         { y: -100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.2, ease: "expo.out" }
+        { y: 0, opacity: 1, duration: 1.2, ease: "expo.out" },
       );
       gsap.utils.toArray(".navbar-links a").forEach((link, i) => {
         gsap.fromTo(
@@ -22,12 +30,37 @@ export default function Navbar() {
             duration: 0.8,
             ease: "expo.out",
             delay: 0.2 + i * 0.1,
-          }
+          },
         );
       });
     });
     return () => ctx.revert();
   }, []);
+
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll("section[id]"));
+    if (sections.length === 0) return;
+
+    const hash = window.location.hash.slice(1);
+    if (hash && document.getElementById(hash)) setActiveLink(hash);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActiveLink(entry.target.id);
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 },
+    );
+
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
+
+  const handleClick = (e, id) => {
+    if (!document.getElementById(id)) e.preventDefault();
+    else setActiveLink(id);
+  };
 
   return (
     <header className="navbar">
@@ -37,41 +70,16 @@ export default function Navbar() {
         <span className="navbar-subtitle">Diario del hincha millonario</span>
       </div>
       <nav className="navbar-links">
-        <a
-          href="#portada"
-          className={activeLink === "portada" ? "active" : ""}
-          onClick={() => setActiveLink("portada")}
-        >
-          Portada
-        </a>
-        <a
-          href="#noticias"
-          className={activeLink === "noticias" ? "active" : ""}
-          onClick={() => setActiveLink("noticias")}
-        >
-          Noticias
-        </a>
-        <a
-          href="#partidos"
-          className={activeLink === "partidos" ? "active" : ""}
-          onClick={() => setActiveLink("partidos")}
-        >
-          Partidos
-        </a>
-        <a
-          href="#plantel"
-          className={activeLink === "plantel" ? "active" : ""}
-          onClick={() => setActiveLink("plantel")}
-        >
-          Plantel
-        </a>
-        <a
-          href="#contacto"
-          className={activeLink === "contacto" ? "active" : ""}
-          onClick={() => setActiveLink("contacto")}
-        >
-          Contacto
-        </a>
+        {LINKS.map(({ id, label }) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className={activeLink === id ? "active" : ""}
+            onClick={(e) => handleClick(e, id)}
+          >
+            {label}
+          </a>
+        ))}
       </nav>
     </header>
   );
