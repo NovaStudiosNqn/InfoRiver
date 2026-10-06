@@ -1,7 +1,7 @@
 import "./hero.css";
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
-
+import Card from "../componentes/card";
 export default function Hero() {
   const rootRef = useRef(null);
 
@@ -28,16 +28,6 @@ export default function Hero() {
           "<+=0.3",
         );
 
-      gsap.to(".bandaroja", {
-        y: 5,
-        rotation: "+=1",
-        duration: 2.4,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-        delay: 1.2,
-      });
-
       gsap.fromTo(
         ".bandaroja-brillo",
         { xPercent: -250 },
@@ -47,7 +37,7 @@ export default function Hero() {
           ease: "power1.inOut",
           repeat: -1,
           repeatDelay: 0.9,
-          delay: 2.3,
+          delay: 2.5,
         },
       );
     }, rootRef);
@@ -58,6 +48,37 @@ export default function Hero() {
     <section className="hero" id="portada" ref={rootRef}>
       <div className="bandaroja" aria-hidden="true">
         <span className="bandaroja-brillo" aria-hidden="true" />
+      </div>
+      <div className="hero-inner">
+        <div className="hero-grid">
+          <Card
+            className="main-card"
+            image="/placeholders/quarta.png"
+            imageHeight="55%"
+            kicker="Destacada"
+            title="Placeholder Title"
+            description="Placeholder description for the card"
+            link="https://example.com"
+          />
+          <div className="secundary-cards">
+            <Card
+              image="/placeholders/quarta.png"
+              imageHeight="50%"
+              kicker="River hoy"
+              title="Placeholder Title"
+              description="Placeholder description for the card"
+              link="https://example.com"
+            />
+            <Card
+              image="/placeholders/quarta.png"
+              imageHeight="50%"
+              kicker="Historia"
+              title="Placeholder Title"
+              description="Placeholder description for the card"
+              link="https://example.com"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

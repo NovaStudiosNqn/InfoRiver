@@ -4,10 +4,77 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding: 5rem 0 3rem;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1000px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.hero-header {
+  margin-bottom: 1.25rem;
+}
+
+.hero-kicker {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #fff;
+  background: #d00027;
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.hero-title {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  margin-top: 0.3rem;
+  color: #555;
+  font-size: 1rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 1rem;
+  align-items: stretch;
+  height: clamp(520px, 64vh, 620px);
+}
+
+.hero-grid > .card {
+  min-height: 0;
+}
+
+.secundary-cards {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  min-height: 0;
+  height: 100%;
+}
+
+.secundary-cards {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  min-height: 100%;
+}
+
+.secundary-cards .card {
+  height: 100%;
+  width: 100%;
 }
 
 .bandaroja {
-  position: relative;
   width: 130%;
   margin-top: 75vh;
   flex-shrink: 0;
@@ -21,6 +88,8 @@
     0 2px 6px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   will-change: transform, opacity, filter;
+  position: absolute;
+  z-index: 0;
 }
 
 .bandaroja-brillo {
@@ -38,6 +107,37 @@
   filter: blur(1px);
   pointer-events: none;
   will-change: transform;
+}
+
+@media (max-width: 800px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .hero-grid > .card {
+    height: auto;
+  }
+
+  .secundary-cards {
+    grid-template-rows: none;
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .secundary-cards .card {
+    height: auto;
+  }
+
+  .hero .card-image {
+    height: 200px !important;
+    max-height: 240px;
+  }
+
+  .hero .card.main-card .card-image {
+    height: 220px !important;
+    max-height: 280px;
+  }
 }
 
 @media (max-width: 640px) {
