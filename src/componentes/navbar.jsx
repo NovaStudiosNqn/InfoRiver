@@ -6,7 +6,7 @@ export default function Navbar() {
         <header className="navbar">
             <img src={logo} alt="InfoRiver logo" className="navbar-logo" />
             <div className="navbar-brand">
-                <span className="navbar-title">InfoRiver</span>
+                <span className="navbar-title">InfoRiver96</span>
                 <span className="navbar-subtitle">Diario del hincha millonario</span>
             </div>
             <nav className="navbar-links">
