@@ -10,7 +10,7 @@
 .hero-inner {
   position: relative;
   z-index: 1;
-  width: min(1000px, calc(100% - 2rem));
+  width: min(1200px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
@@ -33,7 +33,7 @@
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.45fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 1rem;
   align-items: stretch;
   height: clamp(520px, 64vh, 620px);
